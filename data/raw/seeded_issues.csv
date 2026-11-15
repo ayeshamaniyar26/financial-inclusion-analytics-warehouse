@@ -1,0 +1,4 @@
+issue_id,issue_type,source,description,affected_records
+I001,DUPLICATE_LOAN_ROWS,loan_portfolio,100 existing loan rows were duplicated.,100
+I002,MISSING_BRANCH_MONTH,repayment_transactions,Removed all transactions for branch BR0101 during 2025-04.,769
+I003,INCONSISTENT_CURRENCY_UNIT,repayment_transactions,Some partner portal amounts were divided by 1000 and stored in thousands of INR.,4286

@@ -1,0 +1,116 @@
+
+=================================================================
+1. DATASET SIZES
+=================================================================
+Loan portfolio rows: 50100 | Expected: 50100
+Unique loan IDs: 50000 | Expected: 50000
+Instalment schedule rows: 488444
+Repayment transaction rows: 428618
+Branch master rows: 32 | Expected: 32
+
+=================================================================
+2. LOAN PORTFOLIO
+=================================================================
+Duplicate loan IDs: 100 | Expected: 100
+Duplicate complete rows: 100
+Missing values by column: {'loan_id': 0, 'borrower_id': 0, 'state': 0, 'branch_id': 0, 'branch': 0, 'loan_product': 0, 'borrower_segment': 0, 'disbursement_date': 0, 'loan_amount': 0, 'annual_interest_rate': 0, 'tenure_months': 0, 'source_unit': 0, 'total_repayment_expected': 0, 'monthly_instalment': 0, 'instalments_due': 0, 'instalments_paid': 0, 'outstanding_principal': 0, 'days_past_due': 0, 'loan_status': 0}
+Number of states: 8 | Expected: 8
+Number of branches: 32 | Expected: 32
+Loan products: 4
+Borrower segments: 4
+Loan amount minimum: 10012.0
+Loan amount maximum: 149997.0
+Invalid loan amounts: 0
+Invalid tenure: 0
+Negative outstanding principal: 0
+Negative DPD: 0
+Paid instalments exceeding due instalments: 0
+
+=================================================================
+3. INSTALMENT SCHEDULE
+=================================================================
+Schedule loan IDs missing from portfolio: 0
+Duplicate loan-installment combinations: 0
+Missing schedule values: {'loan_id': 0, 'branch_id': 0, 'state': 0, 'loan_product': 0, 'borrower_segment': 0, 'disbursement_date': 0, 'installment_number': 0, 'due_date': 0, 'amount_due': 0, 'principal_due': 0, 'is_paid_by_snapshot': 0}
+Non-positive instalment amounts: 0
+Non-positive principal amounts: 0
+Principal exceeding instalment amount: 0
+Invalid schedule due dates: 0
+Earliest instalment due date: 2023-12-01 00:00:00
+Latest instalment due date: 2025-12-31 00:00:00
+
+=================================================================
+4. REPAYMENT TRANSACTIONS
+=================================================================
+Duplicate transaction IDs: 0
+Payment loan IDs missing from portfolio: 0
+Missing transaction values: {'transaction_id': 0, 'loan_id': 0, 'branch_id': 0, 'state': 0, 'payment_date': 0, 'amount': 0, 'channel': 0, 'source_system': 0, 'amount_unit': 0}
+Non-positive payment amounts: 0
+Invalid payment dates: 0
+First payment date: 2023-12-01 00:00:00
+Last payment date: 2025-12-31 00:00:00
+Coverage in days: 761
+At least two years of dates: True
+Payment channels: {'UPI': 170572, 'Cash': 165584, 'Bank Transfer': 92462}
+Source systems: {'CORE_BANKING': 364379, 'PARTNER_PORTAL': 64239}
+
+=================================================================
+5. SEEDED DATA QUALITY ISSUES
+=================================================================
+I001 - Duplicate loan rows detected: 100 | Expected: 100
+I003 - Amount unit distribution: {'INR': 424332, 'THOUSANDS_INR': 4286}
+I003 - Non-INR unit records: 4286 | Expected: 4063
+I003 - Partner portal non-INR records: 4286 | Expected: 4063
+I002 - BR0101 transactions in April 2025: 0 | Expected: 0
+
+=================================================================
+6. BRANCH MASTER
+=================================================================
+Unique branch IDs: 32 | Expected: 32
+Unique states in branch master: 8 | Expected: 8
+Duplicate branch IDs: 0
+Missing branch master values: {'branch_id': 0, 'branch_name': 0, 'state': 0, 'branch_risk_adjustment': 0}
+Portfolio branches missing from master: []
+
+=================================================================
+7. DIGITAL COLLECTION TREND
+=================================================================
+Digital count share - first 3 months (%): 24.41
+Digital count share - last 3 months (%): 47.89
+Digital share increased: True
+
+Monthly digital trend:
+  month  total_payments  digital_count  total_value  digital_value  digital_count_share_pct  digital_value_share_pct
+2023-12           476.0           95.0 2.636074e+06   5.130471e+05                19.957983                19.462546
+2024-01          1739.0          463.0 9.896665e+06   2.546144e+06                26.624497                25.727289
+2024-02          3435.0          915.0 1.963884e+07   5.214639e+06                26.637555                26.552676
+2024-03          5594.0         1522.0 3.146040e+07   8.564252e+06                27.207723                27.222323
+2024-04          7189.0         2039.0 4.016153e+07   1.117836e+07                28.362776                27.833489
+2024-05          9148.0         2668.0 5.182830e+07   1.511358e+07                29.164845                29.160855
+2024-06         10672.0         3338.0 5.955542e+07   1.887510e+07                31.278111                31.693342
+2024-07         12797.0         3878.0 7.016197e+07   2.118206e+07                30.303977                30.190229
+2024-08         14188.0         4478.0 7.617174e+07   2.414936e+07                31.561883                31.703824
+2024-09         14979.0         4986.0 8.025741e+07   2.713060e+07                33.286601                33.804477
+2024-10         17296.0         5819.0 9.109952e+07   3.100786e+07                33.643617                34.037343
+2024-11         18159.0         6343.0 9.510628e+07   3.363823e+07                34.930338                35.369092
+2024-12         20355.0         7319.0 1.046194e+08   3.719606e+07                35.956767                35.553686
+2025-01         21213.0         7855.0 1.086814e+08   4.038525e+07                37.029180                37.159310
+2025-02         19686.0         7478.0 9.918954e+07   3.767657e+07                37.986386                37.984421
+2025-03         23784.0         9484.0 1.192475e+08   4.740911e+07                39.875547                39.756887
+2025-04         22910.0         9253.0 1.137031e+08   4.593614e+07                40.388477                40.400067
+2025-05         24416.0        10244.0 1.203307e+08   5.025097e+07                41.956094                41.760742
+2025-06         24277.0        10185.0 1.192968e+08   5.028848e+07                41.953289                42.154088
+2025-07         25668.0        11212.0 1.258125e+08   5.458067e+07                43.680848                43.382534
+2025-08         26027.0        11496.0 1.264653e+08   5.579391e+07                44.169516                44.117950
+2025-09         24778.0        11261.0 1.193294e+08   5.443327e+07                45.447574                45.615975
+2025-10         26753.0        12535.0 1.283045e+08   6.033541e+07                46.854558                47.025160
+2025-11         25947.0        12375.0 1.226376e+08   5.840163e+07                47.693375                47.621305
+2025-12         27132.0        13331.0 1.290572e+08   6.357368e+07                49.133864                49.260086
+
+=================================================================
+8. SEEDED ISSUE MANIFEST
+=================================================================
+issue_id                 issue_type                 source                                                                      description  affected_records
+    I001        DUPLICATE_LOAN_ROWS         loan_portfolio                                          100 existing loan rows were duplicated.               100
+    I002       MISSING_BRANCH_MONTH repayment_transactions                       Removed all transactions for branch BR0101 during 2025-04.               769
+    I003 INCONSISTENT_CURRENCY_UNIT repayment_transactions Some partner portal amounts were divided by 1000 and stored in thousands of INR.              4286
