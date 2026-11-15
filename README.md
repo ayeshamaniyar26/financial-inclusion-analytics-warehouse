@@ -1,6 +1,12 @@
 
 # Financial Inclusion Analytics Warehouse
 
+**🚀 Live Dashboard:** [Open Live Dashboard](https://financial-inclusion-analytics.streamlit.app/)
+
+**📂 GitHub Repository:** [View Source Code](https://github.com/ayeshamaniyar26/financial-inclusion-analytics-warehouse)
+
+---
+
 ## Task 10 – Financial Inclusion Analytics
 
 ## 1. Project Overview
